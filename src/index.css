@@ -3,7 +3,11 @@ html {
   font-size: 1rem;
   font-family: sans-serif;
 }
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body,
 #root {
   height: 100vh;
@@ -38,6 +42,17 @@ a:hover {
 main {
   grid-area: main;
 }
+
+main .content {
+  display: flex;
+  flex-wrap: wrap;
+}
+main .main-content {
+  flex: 3 60rem;
+}
+main .sidebar {
+  flex: 1 3rem;
+}
 footer {
   grid-area: footer;
   background: #203040;
@@ -45,4 +60,61 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* ========== products ========= */
+li {
+  list-style: none;
+}
+ul.products {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 0.5rem;
+}
+img {
+  width: 100%;
+}
+.products li {
+  padding: 1rem;
+}
+
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product-price {
+  margin-top: 0.5rem;
+}
+.title {
+  font-size: 0.9rem;
+  color: #ff8000;
+}
+a {
+  text-decoration: none;
+}
+
+.product-price div {
+  font-size: 2rem;
+}
+.button {
+  padding: 1rem;
+  border: 0.1rem solid #c0c0c0;
+  background: #f0f0f0;
+  transition: 0.5s ease;
+  cursor: pointer;
+  width: 200px;
+}
+.button:hover {
+  border: 0.1rem solid #808080;
+}
+.button.primary {
+  background: #f0c040;
 }
